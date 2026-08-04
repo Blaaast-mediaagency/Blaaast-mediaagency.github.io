@@ -1,9 +1,277 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BLAAAST — Agenzia di comunicazione</title>
+  <meta name="description" content="BLAAAST è un'agenzia di comunicazione. Branding, social, web e campagne: costruiamo identità che non passano inosservate.">
+
+  <!-- Open Graph (per la condivisione su social) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BLAAAST — Agenzia di comunicazione">
+  <meta property="og:description" content="Branding, social, web e campagne. Costruiamo identità che non passano inosservate.">
+  <meta property="og:url" content="https://blaaast.it/">
+  <meta property="og:site_name" content="BLAAAST">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://blaaast.it/">
+
+  <!-- Font: Space Grotesk (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="BLAAAST — torna all'inizio">
+        <span class="logo-mark" aria-hidden="true"></span>
+        BLAAAST
+      </a>
 
+      <nav class="site-nav" aria-label="Navigazione principale" id="site-nav">
+        <ul class="nav-list">
+          <li><a href="#servizi">Servizi</a></li>
+          <li><a href="#lavori">Lavori</a></li>
+          <li><a href="#studio">Studio</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-small btn-accent" href="#contatti">Parliamone</a>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Apri il menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-label="Introduzione">
+      <div class="container">
+        <p class="kicker reveal">Agenzia di comunicazione — Milano / Remote</p>
+        <h1 class="hero-title reveal">
+          Comunichiamo<br>
+          con <em>impatto</em>.
+        </h1>
+        <p class="hero-sub reveal">
+          Siamo BLAAAST: strategia, creatività e design per brand che vogliono
+          farsi notare. Dal naming alla campagna, costruiamo identità che
+          lasciano il segno.
+        </p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-accent" href="#contatti">Inizia un progetto</a>
+          <a class="btn btn-ghost" href="#lavori">Vedi i lavori</a>
+        </div>
+        <p class="hero-meta reveal">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          Stiamo accettando nuovi progetti per il trimestre in corso
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Branding</span><span class="marquee-sep">✦</span>
+        <span>Social Media</span><span class="marquee-sep">✦</span>
+        <span>Web Design</span><span class="marquee-sep">✦</span>
+        <span>Content</span><span class="marquee-sep">✦</span>
+        <span>Strategy</span><span class="marquee-sep">✦</span>
+        <span>Campagne</span><span class="marquee-sep">✦</span>
+        <span>Branding</span><span class="marquee-sep">✦</span>
+        <span>Social Media</span><span class="marquee-sep">✦</span>
+        <span>Web Design</span><span class="marquee-sep">✦</span>
+        <span>Content</span><span class="marquee-sep">✦</span>
+        <span>Strategy</span><span class="marquee-sep">✦</span>
+        <span>Campagne</span><span class="marquee-sep">✦</span>
+      </div>
+    </div>
+
+    <!-- ============ SERVIZI ============ -->
+    <section class="section services" id="servizi" aria-labelledby="servizi-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker reveal">Cosa facciamo</p>
+          <h2 class="section-title reveal" id="servizi-title">Servizi che fanno <em>boom</em>.</h2>
+        </div>
+
+        <ul class="services-grid">
+          <li class="service-card reveal">
+            <span class="service-num" aria-hidden="true">01</span>
+            <h3 class="service-title">Branding &amp; Identity</h3>
+            <p class="service-text">
+              Naming, logo, identità visiva e linee guida. Un brand coerente
+              dalla carta da lettere al profilo social.
+            </p>
+            <a class="service-link" href="#contatti">Richiedi una consulenza <span aria-hidden="true">→</span></a>
+          </li>
+
+          <li class="service-card reveal">
+            <span class="service-num" aria-hidden="true">02</span>
+            <h3 class="service-title">Social &amp; Content</h3>
+            <p class="service-text">
+              Strategie editoriali, produzione contenuti e gestione canali.
+              Presenza costante, tono di voce riconoscibile.
+            </p>
+            <a class="service-link" href="#contatti">Richiedi una consulenza <span aria-hidden="true">→</span></a>
+          </li>
+
+          <li class="service-card reveal">
+            <span class="service-num" aria-hidden="true">03</span>
+            <h3 class="service-title">Web &amp; Digital</h3>
+            <p class="service-text">
+              Siti, landing page e campagne digital. Progettiamo esperienze
+              che convertono e si caricano in un batter d'occhio.
+            </p>
+            <a class="service-link" href="#contatti">Richiedi una consulenza <span aria-hidden="true">→</span></a>
+          </li>
+
+          <li class="service-card reveal">
+            <span class="service-num" aria-hidden="true">04</span>
+            <h3 class="service-title">Strategy &amp; Campaigns</h3>
+            <p class="service-text">
+              Posizionamento, piani di comunicazione e campagne integrate.
+              Obiettivi chiari, risultati misurabili.
+            </p>
+            <a class="service-link" href="#contatti">Richiedi una consulenza <span aria-hidden="true">→</span></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ LAVORI ============ -->
+    <section class="section works" id="lavori" aria-labelledby="lavori-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker reveal">Selected work</p>
+          <h2 class="section-title reveal" id="lavori-title">Progetti che <em>spaccano</em>.</h2>
+        </div>
+
+        <ul class="works-grid">
+          <li class="work-card reveal">
+            <a class="work-link" href="#contatti" aria-label="Vedi il progetto NomeCliente — Branding">
+              <div class="work-visual work-visual-1" aria-hidden="true"></div>
+              <div class="work-info">
+                <span class="work-tag">Branding · 2026</span>
+                <h3 class="work-name">Nome Cliente</h3>
+                <p class="work-desc">Rebranding completo per una startup in crescita</p>
+              </div>
+            </a>
+          </li>
+
+          <li class="work-card reveal">
+            <a class="work-link" href="#contatti" aria-label="Vedi il progetto NomeCliente — Social">
+              <div class="work-visual work-visual-2" aria-hidden="true"></div>
+              <div class="work-info">
+                <span class="work-tag">Social · 2026</span>
+                <h3 class="work-name">Nome Cliente</h3>
+                <p class="work-desc">Campagna social con +120% di engagement</p>
+              </div>
+            </a>
+          </li>
+
+          <li class="work-card reveal">
+            <a class="work-link" href="#contatti" aria-label="Vedi il progetto NomeCliente — Web">
+              <div class="work-visual work-visual-3" aria-hidden="true"></div>
+              <div class="work-info">
+                <span class="work-tag">Web · 2026</span>
+                <h3 class="work-name">Nome Cliente</h3>
+                <p class="work-desc">Sito istituzionale, performance al top</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ STUDIO / VALORI ============ -->
+    <section class="section studio" id="studio" aria-labelledby="studio-title">
+      <div class="container">
+        <p class="kicker reveal">Lo studio</p>
+        <h2 class="studio-statement reveal" id="studio-title">
+          Non facciamo rumore a caso.<br>
+          Facciamo <em>BLAAAST</em>.
+        </h2>
+        <div class="studio-grid">
+          <p class="studio-text reveal">
+            Un team piccolo, affamato e multidisciplinare. Niente grandi
+            strutture e niente giri di parole: solo persone che pensano,
+            disegnano e scrivono per far crescere il tuo brand.
+          </p>
+          <ul class="studio-values">
+            <li class="reveal"><span class="value-mark" aria-hidden="true">✦</span> Strategia prima di tutto</li>
+            <li class="reveal"><span class="value-mark" aria-hidden="true">✦</span> Design che parla da solo</li>
+            <li class="reveal"><span class="value-mark" aria-hidden="true">✦</span> Risultati misurabili</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINALE ============ -->
+    <section class="section cta-section" id="contatti" aria-labelledby="cta-title">
+      <div class="container">
+        <h2 class="cta-title reveal" id="cta-title">
+          Hai un progetto?<br>
+          Facciamolo <em>esplodere</em>.
+        </h2>
+        <p class="cta-text reveal">
+          Raccontaci la tua idea: ti rispondiamo entro 24 ore con una prima
+          valutazione, senza impegno.
+        </p>
+        <div class="cta-actions reveal">
+          <a class="btn btn-accent btn-big" href="mailto:ciao@blaaast.it">ciao@blaaast.it</a>
+          <a class="btn btn-ghost btn-big" href="tel:+390000000000">+39 000 000 0000</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo footer-logo" href="#top" aria-label="BLAAAST — torna all'inizio">
+          <span class="logo-mark" aria-hidden="true"></span>
+          BLAAAST
+        </a>
+        <p class="footer-tagline">Agenzia di comunicazione.<br>Milano / Remote.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Link del footer">
+        <ul>
+          <li><a href="#servizi">Servizi</a></li>
+          <li><a href="#lavori">Lavori</a></li>
+          <li><a href="#studio">Studio</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <p><a href="mailto:ciao@blaaast.it">ciao@blaaast.it</a></p>
+        <p><a href="tel:+390000000000">+39 000 000 0000</a></p>
+        <ul class="footer-social" aria-label="Social">
+          <li><a href="#" rel="noopener">Instagram</a></li>
+          <li><a href="#" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" rel="noopener">Behance</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> BLAAAST. Tutti i diritti riservati.</p>
+      <p>P.IVA 00000000000</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
