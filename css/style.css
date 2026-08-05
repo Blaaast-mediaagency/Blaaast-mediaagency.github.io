@@ -281,23 +281,29 @@ em {
   transform: translateY(-2px);
 }
 
+/* Primario: outline ciano sobrio, si riempie solo in hover */
 .btn-accent {
-  background: var(--cyan);
-  color: var(--ink);
+  border-color: var(--cyan);
+  background: transparent;
+  color: var(--cyan);
 }
 
 .btn-accent:hover {
-  background: var(--cyan-soft);
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--ink);
 }
 
+/* Secondario: bordo ciano tenue, si accende in hover */
 .btn-ghost {
-  border-color: var(--ink-3);
+  border-color: rgba(0, 240, 255, 0.4);
   color: var(--bone);
 }
 
 .btn-ghost:hover {
   border-color: var(--cyan);
   color: var(--cyan);
+  box-shadow: 0 0 0 4px rgba(0, 240, 255, 0.12);
 }
 
 .btn-small {
@@ -498,13 +504,13 @@ em {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--cyan);
+  background: var(--magenta);
   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.5); }
-  50%      { box-shadow: 0 0 0 7px rgba(0, 240, 255, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 46, 151, 0.5); }
+  50%      { box-shadow: 0 0 0 7px rgba(255, 46, 151, 0); }
 }
 
 /* ==========================================================================
