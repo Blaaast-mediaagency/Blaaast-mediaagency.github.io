@@ -27,7 +27,7 @@
   /* Tipografia — titoli in Space Grotesk (come la V1); parole-emblema,
      logo e badge in Baloo 2 (bold e tondeggiante) */
   --font-rye:    "Baloo 2", "Arial Black", sans-serif;
-  --font-display: "Space Grotesk", "Arial Black", sans-serif;
+  --font-display: "Space Grotesk", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
   --font-body:    "Space Grotesk", system-ui, -apple-system, sans-serif;
   --font-mono:    "Rubik Mono One", "Courier New", monospace; /* teletype HUD */
 
@@ -478,16 +478,22 @@ em {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 9vw, 6.8rem);
+  /* Font calibrato sul font vero (Space Grotesk): la riga 2 è larga
+     ~10.02em, a 7.2vw/5.6rem resta dentro i 1160px del contenitore
+     anche quando, durante il caricamento, il browser usa il font di
+     riserva (più largo). */
+  font-size: clamp(2.8rem, 7.2vw, 5.6rem);
   font-weight: 700;
-  line-height: 0.98;
+  line-height: 1.05;
   letter-spacing: -0.03em;
   margin-bottom: 1.8rem;
 }
 
-/* Seconda riga del titolo: sempre intera (mai a capo a metà) */
+/* Seconda riga del titolo: di norma resta intera. Se il font di riserva
+   è troppo largo per lo schermo, può andare a capo prima di "frontiera":
+   mai tagliata, mai fuori dallo schermo. */
 .hero-line2 {
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .hero-sub {
@@ -956,6 +962,18 @@ em {
 @media (max-width: 900px) {
   .nav-toggle { display: flex; }
 
+  /* Fascia tablet/telefono grande (641–900px): il titolo NON deve uscire
+     dallo schermo. Font calibro sul viewport e riga 2 libera di andare a
+     capo prima di "frontiera" se serve. */
+  .hero-title {
+    font-size: clamp(2rem, 8.5vw, 3.8rem);
+    line-height: 1.1;
+  }
+  .hero-line2 {
+    white-space: normal;
+    font-size: clamp(1.7rem, 7.5vw, 3.2rem);
+  }
+
   .site-nav {
     position: fixed;
     inset: 76px 0 auto 0;
@@ -996,11 +1014,17 @@ em {
   .container { width: min(1160px, 100% - 2rem); }
   .hero { min-height: auto; padding-top: 8.5rem; }
   .header-actions .btn { display: none; }
-  /* Il titolo resta su 2 righe: font più piccolo perché la riga 2
-     (oltre l'ULTIMA FRONTIERA.) non deve andare a capo */
+  /* Il titolo su mobile: font calibrato sul viewport perché le righe
+     "Portiamo il tuo brand" e "oltre l'ultima frontiera." non vengano
+     tagliate sui lati. La riga 2 può andare a capo prima di "frontiera"
+     se serve, ma non deve mai essere tagliata. */
   .hero-title {
-    font-size: clamp(1.8rem, 9.5vw, 3rem);
-    line-height: 1.08;
+    font-size: clamp(1.5rem, 7.5vw, 2.8rem);
+    line-height: 1.12;
+  }
+  .hero-line2 {
+    white-space: normal;
+    font-size: clamp(1.2rem, 6.8vw, 2.2rem);
   }
 }
 
@@ -1106,4 +1130,92 @@ body::after { opacity: 0.07; }
 /* Menu mobile: pannello carta */
 @media (max-width: 900px) {
   .site-nav { background: rgba(251, 247, 240, 0.97); }
+}
+
+/* ==========================================================================
+   FORM DI CONTATTO — Formspree
+   Card "carta" con angoli legno, coerenza col design system diurno.
+   ========================================================================== */
+.contact-form {
+  margin: 2.6rem auto 0;
+  max-width: 720px;
+  padding: 1.8rem;
+  text-align: left;
+  background: var(--ink-2);
+  border: 1px solid var(--ink-3);
+  border-radius: var(--radius);
+  box-shadow: 8px 8px 0 rgba(228, 217, 197, 0.6);
+}
+
+/* Honeypot anti-spam: invisibile a utenti e crawler */
+.form-hp {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+.form-row {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.1rem;
+}
+
+.form-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--bone);
+  background: var(--bg);
+  border: 1px solid var(--ink-3);
+  border-radius: var(--radius);
+  transition: border-color var(--speed) var(--ease),
+              box-shadow var(--speed) var(--ease);
+}
+
+.form-field select {
+  cursor: pointer;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--acid);
+  box-shadow: 0 0 0 3px rgba(240, 82, 30, 0.15);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.6rem;
+}
+
+.form-note {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--bone-dim);
+}
+
+@media (min-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
 }
