@@ -15,7 +15,7 @@
   --bone-dim:   #6E5F4E;   /* testo secondario                         */
   --acid:       #F0521E;   /* arancio tramonto brillante                */
   --acid-soft:  #FF7A3C;   /* hover arancio                             */
-  --acid-ink:   #B72B0A;   /* arancio scuro — testi piccoli (AA ovunque) */
+  --acid-ink:   var(--ink); /* inchiostro caldo — ex arancio scuro (B72B0A rimosso) */
   --accent:     var(--acid);   /* accento UI unico: l'arancio tramonto   */
   --accent-soft: var(--acid-soft);
   /* Alias legacy (deprecati, non usare): ex blu rimosso dalla palette */
@@ -24,9 +24,9 @@
   --magenta:    #BE185D;   /* accent "emozione"                        */
   --sunset:     #E9A12B;   /* oro ambra                                */
 
-  /* Tipografia — titoli in Space Grotesk (come la V1); parole-emblema,
-     logo e badge in Baloo 2 (bold e tondeggiante) */
-  --font-rye:    "Baloo 2", "Arial Black", sans-serif;
+  /* Tipografia — solo due font: Space Grotesk (display/body) e Rubik Mono One
+     (parole-emblema, logo, badge, HUD dati) — Baloo 2 rimosso */
+  --font-rye:    "Rubik Mono One", "Courier New", monospace; /* ex Baloo 2 */
   --font-display: "Space Grotesk", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
   --font-body:    "Space Grotesk", system-ui, -apple-system, sans-serif;
   --font-mono:    "Rubik Mono One", "Courier New", monospace; /* teletype HUD */
@@ -134,7 +134,7 @@ body::after {
   letter-spacing: -0.02em;
 }
 
-/* Parola-emblema: Baloo 2 al massimo, in maiuscolo, mai spezzata */
+/* Parola-emblema: Rubik Mono One al massimo, in maiuscolo, mai spezzata */
 em {
   font-style: normal;
   font-family: var(--font-rye);
