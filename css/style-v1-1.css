@@ -489,11 +489,21 @@ em {
   margin-bottom: 1.8rem;
 }
 
-/* Seconda riga del titolo: di norma resta intera. Se il font di riserva
-   è troppo largo per lo schermo, può andare a capo prima di "frontiera":
-   mai tagliata, mai fuori dallo schermo. */
+/* Riga 2: "l'ultima frontiera." — forzata intera; il punto e la "l'"
+   restano in Space Grotesk, l'em è la parola-emblema Rubik Mono. */
 .hero-line2 {
-  white-space: normal;
+  white-space: nowrap;
+}
+
+/* L'em in Rubik Mono One (maiuscola, arancio, mai spezzata) — ingrandito
+   rispetto a prima (0.62em → 0.88em): la riga 2 resta dentro il
+   contenitore a ogni larghezza. Oltre 0.88em "ULTIMA FRONTIERA" (15
+   caratteri mono ~0.94em l'uno) sfora i 1160px del contenitore. */
+.hero-line2 em {
+  font-size: 0.88em;
+  /* Il letter-spacing globale (0.02em) su un emblema così largo costa
+     ~22px a desktop: azzerato per guadagnare margine nel contenitore. */
+  letter-spacing: 0;
 }
 
 .hero-sub {
@@ -991,14 +1001,14 @@ em {
   .nav-toggle { display: flex; }
 
   /* Fascia tablet/telefono grande (641–900px): il titolo NON deve uscire
-     dallo schermo. Font calibro sul viewport e riga 2 libera di andare a
-     capo prima di "frontiera" se serve. */
+     dallo schermo. Font calibro sul viewport; riga 2 forzata intera
+     (l'em a 0.88em la mantiene dentro il contenitore). */
   .hero-title {
     font-size: clamp(2rem, 8.5vw, 3.8rem);
     line-height: 1.1;
   }
   .hero-line2 {
-    white-space: normal;
+    white-space: nowrap;
     font-size: clamp(1.7rem, 7.5vw, 3.2rem);
   }
 
@@ -1043,15 +1053,15 @@ em {
   .hero { min-height: auto; padding-top: 8.5rem; }
   .header-actions .btn { display: none; }
   /* Il titolo su mobile: font calibrato sul viewport perché le righe
-     "Portiamo il tuo brand" e "oltre l'ultima frontiera." non vengano
-     tagliate sui lati. La riga 2 può andare a capo prima di "frontiera"
-     se serve, ma non deve mai essere tagliata. */
+     "Portiamo il tuo brand oltre" e "l'ultima frontiera." non vengano
+     tagliate sui lati. Riga 2 forzata intera: l'em a 0.88em la tiene
+     dentro il contenitore (margine minimo misurato: 4px a 360px). */
   .hero-title {
     font-size: clamp(1.5rem, 7.5vw, 2.8rem);
     line-height: 1.12;
   }
   .hero-line2 {
-    white-space: normal;
+    white-space: nowrap;
     font-size: clamp(1.2rem, 6.8vw, 2.2rem);
   }
 }
